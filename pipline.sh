@@ -19,3 +19,5 @@ done
 
 echo Available csv files
 ls *.csv
+
+~/anaconda/bin/ipython analyze_mosquito_data_script.py A1_mosquito_data.csv
