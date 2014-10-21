@@ -7,11 +7,12 @@ def fahr_to_celsius(temperature_fahr):
     temperature_celsus = (temperature_fahr-35)*5/9
     return temperature_celsus
 
-def analyze(data):
+def analyze(data,name):
     '''Perform nalysis on mosquoto data
     
     data is a Dataframe with column 'temperature',
     'rainfall' and 'mosquito'.
+    Saves output plot as figure_filename
     
     Performs a least squares regression, plots the results and returns the
     fit parameters'''
@@ -24,5 +25,5 @@ def analyze(data):
     plt.plot(predicted, data['mosquitos'], 'ro')
     min_mosquitos, max_mosquitos = min(data['mosquitos']), max(data['mosquitos'])
     plt.plot([min_mosquitos, max_mosquitos], [min_mosquitos, max_mosquitos], 'k-')
-    plt.show()
+    plt.savefig(name)
     return parameters   
